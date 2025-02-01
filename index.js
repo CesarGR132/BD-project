@@ -19,7 +19,6 @@ app.get('/api/data1', (req, res) => {
         value: row.cantidad,
         label: row.producto
       }))
-      db.end()
       res.json(result)
     }
   })
