@@ -20,7 +20,7 @@ app.get('/api/dataUsers', (req, res) => {
 })
 
 app.get('/api/data', (req, res) => {
-  db.query('SELECT * FROM oc', (err, rows) => {
+  db.query('SELECT precio FROM oc', (err, rows) => {
     if (err) {
       res.status(500)
     } else {
