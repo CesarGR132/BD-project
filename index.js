@@ -9,6 +9,26 @@ const port = process.env.PORT || 5000
 app.use(cors())
 app.use(bodyParser.json())
 
+app.get('/api/dataUsers', (req, res) => {
+  db.query('SELECT * FROM usuarios', (err, rows) => {
+    if (err) {
+      res.status(500)
+    } else {
+      res.json(rows)
+    }
+  })
+})
+
+app.get('/api/data', (req, res) => {
+  db.query('SELECT * FROM oc', (err, rows) => {
+    if (err) {
+      res.status(500)
+    } else {
+      res.json(rows)
+    }
+  })
+})
+
 app.get('/api/data1', (req, res) => {
   db.query('SELECT * FROM bdpedidos', (err, rows) => {
     if (err) {
